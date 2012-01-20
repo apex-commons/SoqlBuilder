@@ -133,17 +133,6 @@ private class FieldConditionTest {
         System.assertEquals('x like \'%acme%\'',new FieldCondition('x',Operator.LIKEX,'acme').toSoql(new SoqlOptions().wildcardStringsInLikeOperators()));   
     }
 
-    private static testmethod void testOperatorMethod_inx(){
-        System.assertEquals('x IN (\'algeria\',\'botswana\')',new FieldCondition('x',Operator.INX, new InxValues('algeria,botswana')).toSoql());   
-        System.assertEquals('x IN (\'algeria\',\'botswana\')',new FieldCondition('x').inx(new InxValues('algeria,botswana')).toSoql());   
-
-    }  
-
-    private static testmethod void testOperatorMethod_notinx(){
-        System.assertEquals('x NOT IN (\'algeria\',\'botswana\')',new FieldCondition('x',Operator.NOT_IN,new InxValues('algeria,botswana')).toSoql());   
-        System.assertEquals('x NOT IN (\'algeria\',\'botswana\')',new FieldCondition('x').notIn(new InxValues('algeria,botswana')).toSoql());   
-
-    }
 
 
 }
